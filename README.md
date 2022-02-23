@@ -10,7 +10,7 @@ Blocking Ip
 unBlockIp
 
 `
-(new SecurityHelper)->blockIp($state_id);
+(new SecurityHelper)->unBlockIp($state_id);
 `
 
 StateId That you have received from blocking ip
