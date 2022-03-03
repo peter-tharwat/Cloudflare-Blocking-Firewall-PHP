@@ -17,11 +17,11 @@ StateId That you have received from blocking ip
 
 Enable Under Attack Mode
 
-`(new \App\Helpers\SecurityHelper)->enableUnderAttackMode();`
+`(new SecurityHelper)->enableUnderAttackMode();`
 
 Disable Under Attack Mode
 
-`(new \App\Helpers\SecurityHelper)->disableUnderAttackMode();`
+`(new SecurityHelper)->disableUnderAttackMode();`
 
 ---------
 Thanks
