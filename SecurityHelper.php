@@ -76,7 +76,7 @@ class SecurityHelper
 	
    public function enableUnderAttackMode(){
 
-        $res = Http::withHeaders([
+        $res = \Http::withHeaders([
             'Content-Type'=>'application/json',
             'X-Auth-Email'=>env('CF_EMAIL'),
             'X-Auth-Key'=>env('CF_KEY')
@@ -89,7 +89,7 @@ class SecurityHelper
     }
     public function disableUnderAttackMode()
     {
-        $res = Http::withHeaders([
+        $res = \Http::withHeaders([
             'Content-Type'=>'application/json',
             'X-Auth-Email'=>env('CF_EMAIL'),
             'X-Auth-Key'=>env('CF_KEY')
