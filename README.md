@@ -15,6 +15,14 @@ unBlockIp
 
 StateId That you have received from blocking ip
 
+Enable Under Attack Mode
+
+`(new \App\Helpers\SecurityHelper)->enableUnderAttackMode();`
+
+Disable Under Attack Mode
+
+`(new \App\Helpers\SecurityHelper)->disableUnderAttackMode();`
+
 ---------
 Thanks
 
