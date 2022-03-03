@@ -71,4 +71,34 @@ class SecurityHelper
     {
         return $this->cfunban($state_id);
     }
+	
+	
+	
+   public function enableUnderAttackMode(){
+
+        $res = Http::withHeaders([
+            'Content-Type'=>'application/json',
+            'X-Auth-Email'=>env('CF_EMAIL'),
+            'X-Auth-Key'=>env('CF_KEY')
+        ])->patch("https://api.cloudflare.com/client/v4/zones/".env('CF_Z')."/settings/security_level",
+            ['value'=>"under_attack"])->json();
+        if($res['success']==true){
+           return true;
+        }
+        return false; 
+    }
+    public function disableUnderAttackMode()
+    {
+        $res = Http::withHeaders([
+            'Content-Type'=>'application/json',
+            'X-Auth-Email'=>env('CF_EMAIL'),
+            'X-Auth-Key'=>env('CF_KEY')
+        ])->patch("https://api.cloudflare.com/client/v4/zones/".env('CF_Z')."/settings/security_level",
+            ['value'=>"medium"])->json();
+        if($res['success']==true){
+           return true;
+        }
+        return false;  
+    }
+	
 }
